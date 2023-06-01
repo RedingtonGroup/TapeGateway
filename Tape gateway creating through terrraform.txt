@@ -1,0 +1,20 @@
+provider "aws" {
+  region = "ap-south-1"
+  profile = "default"
+}
+resource "aws_s3_bucket" "hannure123"/*change the name accordingly*/ {
+  bucket = "my-tf-test-bucket7865434678" /*change it accordingly*/
+  tags = {
+    Name        = "My bucket" /*change it accordingly*/
+  }
+}
+resource "aws_storagegateway_gateway" "example" {
+  gateway_ip_address  = "13.235.61.35" /*change it accordingly -where the agent is installed*/
+  gateway_name        = "example"
+  gateway_timezone    = "GMT"
+  gateway_type        = "VTL"
+  medium_changer_type = "AWS-Gateway-VTL"
+  tape_drive_type     = "IBM-ULT3580-TD5"
+}
+
+
